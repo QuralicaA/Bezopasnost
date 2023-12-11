@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<head></head> 
+<body> 
+
+     <script> 
+    var ABC = "AaBbCcDdEeFfGgHhIiJiKkLlMmNnJjPpQqRrSsTtUuVvWwXxYyZz";
+    var NUMBERS = "0123456789";
+    var SIGNS = "-_@()";
+    var SYMBOLS = ABC + NUMBERS + SIGNS;
+    var LETTERS = ABC + NUMBERS;
+    let password = "";
+    function getPassword (FIRST, SECOND, THIRD) {
+    password += FIRST[Math.floor(Math.random() * FIRST.length)];
+    for (var i = 0; i < 10; i++) {
+    password += SECOND[Math.floor(Math.random() * SECOND.length)];
+    }
+    password += THIRD[Math.floor(Math.random() * THIRD.length)];
+    return password;
+    }
+    document.writeln(getPassword(ABC, SYMBOLS, LETTERS));
+    </script> 
+</body>
