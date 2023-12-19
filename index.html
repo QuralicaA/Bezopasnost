@@ -2,20 +2,20 @@
 <head>
     <script>
     function resultNum() {
-    var a = Number(document.forms['numbers'].elements['a'].value);
-    var mod = Number(document.forms['numbers'].elements['mod'].value);
-    var result2;
-    for (var k = 2; k < mod; k++) {
-    if (a % k == 0 && mod % k == 0) {
-    document.write('Введите взаимно простые числа, плизик');
-    }
-    }
-    for (var i = 0, j = mod - 1; i < j; i++) {
-    result2 = (a * i) % mod;
-    if (result2 === 1 && result2 < mod) {
-    document.write("Обратное число = " + i);
-    }
-    }
+    const a = Number(document.forms['numbers'].elements['a'].value);
+    const mod = Number(document.forms['numbers'].elements['mod'].value);
+    let b = 1;
+        if (mod % a != 0 && a % mod != 0) {
+            for (i = 0; i < mod; i++) {
+                b++;
+                if ((a * b) % mod == 1) {
+                    document.writeln("Обратно число: " + b);
+                    break;
+                }
+            }
+        } else {
+            document.writeln("Число 'a' не простое");
+        }
     }
     </script>
     </head>
